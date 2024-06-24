@@ -1,0 +1,2 @@
+streamlit==1.36.0
+streamlit_javascript==0.1.5

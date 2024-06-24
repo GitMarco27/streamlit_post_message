@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamlit Post Message Test</title>
+    <script>
+        window.onload = function() {
+            var toolFrame = document.getElementById('toolFrame');
+
+            console.log(toolFrame.contentWindow);
+            if (toolFrame.contentWindow) {
+                const message = {
+                    message: "tool-init",
+                    data: {
+                        key1: "value1",
+                        key2: "value2"
+                    }
+                };
+
+                // Function to send the message
+                var sendMessage = function() {
+                    toolFrame.contentWindow.postMessage(message, "*");
+                    console.log('Message sent to tool iframe:', message);
+                };
+
+                // Function to wait for acknowledgment
+                var waitForAcknowledgment = function() {
+                    return new Promise(function(resolve) {
+                        // Listener for messages from the iframe
+                        var messageListener = function(event) {
+                            if (event.data === 'acknowledgment') {
+                                console.log('Acknowledgment received from tool iframe.');
+                                window.removeEventListener('message', messageListener); // Remove the listener once acknowledgment is received
+                                resolve();
+                            }
+                        };
+                        window.addEventListener('message', messageListener);
+                    });
+                };
+
+                // Function to start sending messages
+                var startSendingMessages = async function() {
+                    console.log("Starting sending messages...");
+                    await waitForAcknowledgment();
+                    sendMessage();
+                    console.log('Acknowledgment received, message sent.');
+                };
+
+                // Start waiting for acknowledgment and sending messages
+                startSendingMessages();
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Streamlit Post Message Test</h1>
+    <iframe id="toolFrame" src="http://localhost:8080?embed=True" width="100%" height="600"></iframe>
+</body>
+</html>
