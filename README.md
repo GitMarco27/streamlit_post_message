@@ -4,6 +4,8 @@
 
 [Demo link](https://streamlit-post-message.onrender.com/)
 
+[Demo Docker Image on Docker Hub](https://hub.docker.com/repository/docker/marcosanguineti/streamlit_post_message/general)
+
 Streamlit component for Streamlit applications embedded in an iFrame.
 
 ## 🚀 Background
