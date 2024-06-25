@@ -1,5 +1,9 @@
 # 📊 Streamlit Post Message
 
+![Static Badge](https://img.shields.io/badge/Demo-Run_on_Render-blue?logo=render&link=https%3A%2F%2Fstreamlit-post-message.onrender.com%2F)
+
+[Demo link](https://streamlit-post-message.onrender.com/)
+
 Streamlit component for Streamlit applications embedded in an iFrame.
 
 ## 🚀 Background
