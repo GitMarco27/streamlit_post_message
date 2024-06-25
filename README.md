@@ -40,21 +40,23 @@ Using the pre-commit git hooks to ensure checks before committing.
 (spm) pre-commit autoupdate
 ```
 
-## 🤖 Demo
+## 🐳 Dockerized Demo
 
 This tool requires a specific structure to be followed by our JavaScript-based application Streamlit in an iFrame. For this reason, a very simple html/js-based demo is provided.
 
-In two different terminals run:
+Nginx is a high-performance web server and reverse proxy server. It handles incoming web traffic efficiently by distributing client requests across multiple servers, improving load balancing and speed. It can serve static content directly and manage dynamic content through proxies to application servers. Nginx uses an event-driven, asynchronous architecture for handling many connections simultaneously with minimal resource usage.
+
+You can build and try this demo locally:
 
 ```bash
-(my_venv) python -m http.server 8000
+docker build -t streamlit_post_message .
 ```
 
 ```bash
-(my_venv) streamlit run demo.py --server.port 8080
+docker run -p 80:80 streamlit_post_message
 ```
 
-At `localhost:8000/index.html` you should see something like this:
+At `0.0.0.0` or `localhost` you should see something like this:
 
 ![demo_image](resources/image.png)
 
