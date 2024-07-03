@@ -71,9 +71,6 @@ def streamlit_post_message(
         return {}  # Needed by mypy
 
     else:
-        del st.session_state.listener
-        del st.session_state.get_message_code
-
         if not isinstance(payload, dict):
             raise TypeError("Payload must be a dictionary")
 
