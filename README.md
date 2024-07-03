@@ -8,6 +8,12 @@
 
 Streamlit component for Streamlit applications embedded in an iFrame.
 
+## Installing
+
+```bash
+(spm) pip install git+https://github.com/GitMarco27/streamlit_post_message.git
+```
+
 ## 🚀 Background
 
 This tool was developed to meet a basic need: to pass information between a Streamlit application, embedded in an **iFrame**, and a **JavaScript** based **WebApplication** (Vue, React...) via postMessage.
