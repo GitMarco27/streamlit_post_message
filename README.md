@@ -39,8 +39,8 @@ It's suggested to work with an anaconda virtual environment, with Python>=3.6. T
 ```shell
 conda create -n spm python==3.10.12
 conda activate spm
-(spm) pip install -r requirements.txt
-(spm) pip install -r requirements_dev.txt
+(spm) pip install poetry
+(spm) poetry install
 ```
 
 ### 🔎 Pre-commit

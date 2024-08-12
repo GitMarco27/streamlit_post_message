@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "streamlit-post-message"
+version = "0.1.0"
+description = "Streamlit component for Streamlit applications embedded in an iFrame."
+authors = ["GitMarco27 <marco.sanguineti.info@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+streamlit = "^1.37.1"
+streamlit-javascript = "^0.1.5"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
